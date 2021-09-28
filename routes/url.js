@@ -27,8 +27,8 @@ router.post('/shorten',async(req,res)=>{
             else{
                 const shortUrl = baseUrl + '/' + urlCode;
 
-                url = new URL({
-                    longUrl,shortUrl,urlCode, date: new Date()
+                url = new Url({
+                    urlCode,longUrl,shortUrl, date: new Date()
                 })
 
                 await url.save();
@@ -38,6 +38,7 @@ router.post('/shorten',async(req,res)=>{
 
         }
         catch(err){
+            console.log(err);
             return res.status(500).json('Server Error');
         }
     }
