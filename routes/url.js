@@ -5,7 +5,7 @@ const shortid = require('shortid');
 
 const router = express.Router();
 
-const Url = require('../models/Url');
+const Url = require('../models/UrlModel');
 
 const baseUrl = 'http://localhost:5000';
 
@@ -45,9 +45,11 @@ router.post('/shorten',async(req,res)=>{
         res.status(401).json('Invalid long url');
     }
 
-    module.exports = router;
+    
 
 
 });
+
+module.exports = router;
 
 

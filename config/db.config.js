@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
-const DB_URI = 'mongodb://localhost:27017/urlshortener';
+const pwd = 'MY_MONGO_DB_PASSWORD_HERE';
+const DB_URI = 'mongodb+srv://TapanManu:'+pwd+'@cluster0.bv9c1.mongodb.net/url-shortner?retryWrites=true&w=majority';
 
 mongoose.connect(DB_URI,{
     useNewUrlParser : true,
